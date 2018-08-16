@@ -9,8 +9,14 @@ Rails.application.routes.draw do
   #GET	/users	      index	   users_path	          page to list all users
   #GET	/users/1	    show	   user_path(user)	    page to show user
   #GET	/users/new	  new	     new_user_path	      page to make a new user (signup)
-  #POST	/users	    create	 users_path	          create a new user
+  #POST	/users	      create	 users_path	          create a new user
   #GET	/users/1/edit	edit	   edit_user_path(user)	page to edit user with id 1
   #PATCH	/users/1	  update	 user_path(user)	    update user
-  #DELETE	/users/1	destroy	 user_path(user)	    delete user
+  #DELETE	/users/1	  destroy	 user_path(user)	    delete user
+  get    '/login',   to: 'sessions#new'       #get '/login'
+  post   '/login',   to: 'sessions#create'    #post '/login'
+  delete '/logout',  to: 'sessions#destroy'   #delete '/logout'
+  #GET	/login	login_path	new	page for a new session (login)
+  #POST	/login	login_path	create	create a new session (login)
+  #DELETE	/logout	logout_path	destroy	delete a session (log out)
 end
